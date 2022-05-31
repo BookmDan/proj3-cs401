@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d2ccda-04de-4d78-ac73-62c024a4e42f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movieDB.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CSVReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Movies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RedBlackTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/movies.csv" afterDir="false" />
+    <list default="true" id="28d2ccda-04de-4d78-ac73-62c024a4e42f" name="Changes" comment="first init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +49,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -109,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653960431872</updated>
-      <workItem from="1653960436256" duration="10048000" />
+      <workItem from="1653960436256" duration="11298000" />
     </task>
     <servers />
   </component>
@@ -127,15 +115,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CSVReader.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first init" />
+    <option name="LAST_COMMIT_MESSAGE" value="first init" />
   </component>
 </project>

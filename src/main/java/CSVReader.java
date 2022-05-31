@@ -10,10 +10,10 @@ public class CSVReader {
         String path = "/Users/forsale/IdeaProjects/movieDB/src/main/java/movies.csv";
         String line = "";
 
-        try{
+        try {
             BufferedReader br = new BufferedReader(new FileReader(path));
             map = new HashMap<String, List<String>>();
-            while((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
 
                 String[] values = line.split(",");
 //                System.out.println(line);
@@ -33,7 +33,7 @@ public class CSVReader {
                 map.put(key, list);
 //                System.out.println(map);
             }
-            BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             System.out.print("Year: ");
             String year = reader.readLine();
 
@@ -42,6 +42,7 @@ public class CSVReader {
 
             System.out.print("Language: ");
             String language = reader.readLine();
+            // for making language input, case-insensitive
 //            String language = reader.readLine().toLowerCase();
 //            String s1 = language.substring(0,1).toUpperCase();
 //            language = s1 + language.substring(1);
@@ -49,21 +50,52 @@ public class CSVReader {
             System.out.print("Rating: ");
             String content_rating = reader.readLine().toUpperCase();
 
-            System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score +  " language:" + language + " rating:" + content_rating + ")");
 
-            for(Map.Entry<String, List<String>> i: map.entrySet()) {
-                if(i.getValue().contains(year) && i.getValue().contains(imdb_score) ){ //&& i.getValue().contains(imdb_score) && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
-//                    if(i.getValue().contains(content_rating))
-                    //System.out.println(entry.getValue());
-                    System.out.println(
-                            "--------------------" + "\n" +
-                                    "id: " + i.getKey() + "\n" +
-                                    "title_year: " + i.getValue().get(0) + "\n" +
-                                    "imdb_score: " + i.getValue().get(1) + "\n" +
-                                    "language: " + i.getValue().get(2) + "\n" +
-                                    "content_rating: " + i.getValue().get(3) + "\n" +
-                                    "--------------------" + "\n");
+            if (!language.isEmpty()) {
+                for (Map.Entry<String, List<String>> i : map.entrySet()) {
+                    if (i.getValue().contains(year) && i.getValue().contains(imdb_score)
+                            && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
+                        System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score + " language:" + language + " rating:" + content_rating + ")");
+                        System.out.println(
+                                "--------------------" + "\n" +
+                                        "id: " + i.getKey() + "\n" +
+                                        "title_year: " + i.getValue().get(0) + "\n" +
+                                        "imdb_score: " + i.getValue().get(1) + "\n" +
+                                        "language: " + i.getValue().get(2) + "\n" +
+                                        "content_rating: " + i.getValue().get(3) + "\n" +
+                                        "--------------------" + "\n");
+                    } else {
+                        System.out.println(i.getKey() + i.getValue());
+                    }
                 }
+//            } else if (!content_rating.isEmpty()) {
+//                while (i.getValue().contains(year) && i.getValue().contains(imdb_score)
+//                        && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
+//                    System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score + ")");
+//                    System.out.println(i.getKey() + i.getValue());
+//                                "--------------------" + "\n" +
+//                                        "id: " + i.getKey() + "\n" +
+//                                        "title_year: " + i.getValue().get(0) + "\n" +
+//                                        "imdb_score: " + i.getValue().get(1) + "\n" +
+//                                        "language: " + i.getValue().get(2) + "\n" +
+//                                        "content_rating: " + i.getValue().get(3) + "\n" +
+//                                        "--------------------" + "\n");
+//                }
+            } else {
+                System.out.println("Test");
+                //(i.getValue().contains(year) && i.getValue().contains(imdb_score)
+                //&& i.getValue().contains(content_rating)) { //&& i.getValue().contains(imdb_score) && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
+//                    if(i.getValue().contains(content_rating))
+                //System.out.println(entry.getValue());
+//                System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score + " rating:" + content_rating + ")");
+//                System.out.println(
+//                        "--------------------" + "\n" +
+//                                "id: " + i.getKey() + "\n" +
+//                                "title_year: " + i.getValue().get(0) + "\n" +
+//                                "imdb_score: " + i.getValue().get(1) + "\n" +
+//                                "language: " + i.getValue().get(2) + "\n" +
+//                                "content_rating: " + i.getValue().get(3) + "\n" +
+//                                "--------------------" + "\n");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
