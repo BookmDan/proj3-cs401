@@ -68,21 +68,37 @@ public class CSVReader {
                         System.out.println(i.getKey() + i.getValue());
                     }
                 }
-//            } else if (!content_rating.isEmpty()) {
-//                while (i.getValue().contains(year) && i.getValue().contains(imdb_score)
-//                        && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
-//                    System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score + ")");
-//                    System.out.println(i.getKey() + i.getValue());
-//                                "--------------------" + "\n" +
-//                                        "id: " + i.getKey() + "\n" +
-//                                        "title_year: " + i.getValue().get(0) + "\n" +
-//                                        "imdb_score: " + i.getValue().get(1) + "\n" +
-//                                        "language: " + i.getValue().get(2) + "\n" +
-//                                        "content_rating: " + i.getValue().get(3) + "\n" +
-//                                        "--------------------" + "\n");
-//                }
+//
             } else {
-                System.out.println("Test");
+                System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score + " rating:" + content_rating + ")");
+                while(!language.isEmpty() && !year.isEmpty() && !content_rating.isEmpty()) {
+                    System.out.println("test1");
+                    for (Map.Entry<String, List<String>> i : map.entrySet()) {
+                        System.out.println("test2");
+                        if (i.getValue().contains(year) && i.getValue().contains(imdb_score)
+                                && i.getValue().contains(content_rating)) {
+
+                            System.out.println(
+                                    "--------------------" + "\n" +
+                                            "id: " + i.getKey() + "\n" +
+                                            "title_year: " + i.getValue().get(0) + "\n" +
+                                            "imdb_score: " + i.getValue().get(1) + "\n" +
+                                            "language: " + i.getValue().get(2) + "\n" +
+                                            "content_rating: " + i.getValue().get(3) + "\n" +
+                                            "--------------------" + "\n");
+                        } else {
+                            System.out.println(i.getKey() + i.getValue());
+                        }
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
                 //(i.getValue().contains(year) && i.getValue().contains(imdb_score)
                 //&& i.getValue().contains(content_rating)) { //&& i.getValue().contains(imdb_score) && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
 //                    if(i.getValue().contains(content_rating))
@@ -96,11 +112,5 @@ public class CSVReader {
 //                                "language: " + i.getValue().get(2) + "\n" +
 //                                "content_rating: " + i.getValue().get(3) + "\n" +
 //                                "--------------------" + "\n");
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
+
+
