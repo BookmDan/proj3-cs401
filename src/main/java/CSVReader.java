@@ -20,15 +20,18 @@ public class CSVReader {
 //                System.out.println("index: " + values[0] + ", Year: " + values[12] + ", Score: " + values[13] + ", Rating: " + values[11] + ", Lang: " +  values[9]);
                 String key = values[0];
                 List<String> list = new ArrayList<String>();
+//                for(int i =0; i < 14; i++ ) {
+//                    list.add(values[i]);
+//                }
                 list.add(values[12]);
                 list.add(values[13]);
                 list.add(values[9]);
                 list.add(values[11]);
-
+//
 //                System.out.println(key);
 //                System.out.println(list);
                 map.put(key, list);
-                //System.out.println(map);
+//                System.out.println(map);
             }
             BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));
             System.out.print("Year: ");
@@ -38,9 +41,10 @@ public class CSVReader {
             String imdb_score = reader.readLine();
 
             System.out.print("Language: ");
-            String language = reader.readLine().toLowerCase();
-            String s1 = language.substring(0,1).toUpperCase();
-            language = s1 + language.substring(1);
+            String language = reader.readLine();
+//            String language = reader.readLine().toLowerCase();
+//            String s1 = language.substring(0,1).toUpperCase();
+//            language = s1 + language.substring(1);
 
             System.out.print("Rating: ");
             String content_rating = reader.readLine().toUpperCase();
@@ -48,10 +52,7 @@ public class CSVReader {
             System.out.println("Results: (Movies -> year:" + year + " score:" + imdb_score +  " language:" + language + " rating:" + content_rating + ")");
 
             for(Map.Entry<String, List<String>> i: map.entrySet()) {
-//                System.out.println("Key= " + entry.getKey() +
-//                        ",  System.out.println("Key= " + entry.getKey() +
-//                                    ", Values= " + entry.getValue());;
-                if(i.getValue().contains(year) && i.getValue().contains(language)){ //&& i.getValue().contains(imdb_score) && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
+                if(i.getValue().contains(year) && i.getValue().contains(imdb_score) ){ //&& i.getValue().contains(imdb_score) && i.getValue().contains(language) && i.getValue().contains(content_rating)) {
 //                    if(i.getValue().contains(content_rating))
                     //System.out.println(entry.getValue());
                     System.out.println(
